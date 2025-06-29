@@ -1,21 +1,15 @@
-# What I learn
+# What I learn new thing
 ## note
-1. effect กระจก
+* ตัวแปรสี
 ```css
-        /*เอฟเฟก กระจก*/
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-        /*------------------*/
+/* Color Variables */
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --primary-blue: #3573b7;
+    --black-blue-gradient: linear-gradient(135deg, #000000 0%, #3573b7 100%);
+    --blue-pink-gradient: linear-gradient(135deg, #3573b7, #fecfef);
+    --LINE: #06c755; /*สีของ LINE*/
+}
 ```
+* อะไรที่ซ้ำๆ เอามาทำเป็น class
