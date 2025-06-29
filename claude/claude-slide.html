@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="claude-slide.css">
+    <title>Image Slider</title>
+
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slides" id="slides">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop" alt="Mountain Lake">
+                    <div class="slide-content">
+                        <div class="slide-title">Mountain Lake</div>
+                        <div class="slide-description">Beautiful serene lake surrounded by majestic mountains</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop" alt="Forest Path">
+                    <div class="slide-content">
+                        <div class="slide-title">Forest Path</div>
+                        <div class="slide-description">A peaceful walk through the enchanted forest</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=500&fit=crop" alt="Ocean Sunset">
+                    <div class="slide-content">
+                        <div class="slide-title">Ocean Sunset</div>
+                        <div class="slide-description">Golden hour by the endless ocean waves</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop" alt="City Skyline">
+                    <div class="slide-content">
+                        <div class="slide-title">City Skyline</div>
+                        <div class="slide-description">Modern architecture reaching for the sky</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=500&fit=crop" alt="Desert Landscape">
+                    <div class="slide-content">
+                        <div class="slide-title">Desert Landscape</div>
+                        <div class="slide-description">Vast golden dunes under the starry night</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-button prev" onclick="changeSlide(-1)"></button>
+            <button class="nav-button next" onclick="changeSlide(1)"></button>
+            
+            <div class="indicators">
+                <span class="indicator active" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+                <span class="indicator" onclick="currentSlide(4)"></span>
+                <span class="indicator" onclick="currentSlide(5)"></span>
+            </div>
+            
+            <button class="play-pause" onclick="toggleAutoPlay()">⏸️</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        let isPlaying = true;
+        let autoPlayInterval;
+        
+        const slides = document.getElementById('slides');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function showSlide(index) {
+            const translateX = -index * 20;
+            slides.style.transform = `translateX(${translateX}%)`;
+            
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+        }
+
+        function changeSlide(direction) {
+            currentIndex += direction;
+            
+            if (currentIndex >= 5) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = 4;
+            }
+            
+            showSlide(currentIndex);
+        }
+
+        function currentSlide(index) {
+            currentIndex = index - 1;
+            showSlide(currentIndex);
+        }
+
+        function autoPlay() {
+            if (isPlaying) {
+                changeSlide(1);
+            }
+        }
+
+        function toggleAutoPlay() {
+            const button = document.querySelector('.play-pause');
+            
+            if (isPlaying) {
+                clearInterval(autoPlayInterval);
+                button.textContent = '▶️';
+                isPlaying = false;
+            } else {
+                startAutoPlay();
+                button.textContent = '⏸️';
+                isPlaying = true;
+            }
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(autoPlay, 4000);
+        }
+
+        // Initialize auto-play
+        startAutoPlay();
+
+        // Pause on hover
+        document.querySelector('.slider-container').addEventListener('mouseenter', () => {
+            if (isPlaying) {
+                clearInterval(autoPlayInterval);
+            }
+        });
+
+        document.querySelector('.slider-container').addEventListener('mouseleave', () => {
+            if (isPlaying) {
+                startAutoPlay();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                toggleAutoPlay();
+            }
+        });
+
+        // Touch support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        document.querySelector('.slider-container').addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        document.querySelector('.slider-container').addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const difference = startX - endX;
+            
+            if (Math.abs(difference) > 50) {
+                if (difference > 0) {
+                    changeSlide(1);
+                } else {
+                    changeSlide(-1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

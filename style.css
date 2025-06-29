@@ -1,0 +1,397 @@
+/*--------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: sans-serif;
+    background: var(--primary-black);
+    color: var(--primary-white);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+hr {
+    width: 150px;
+    height: 4px;
+    background: var(--primary-blue);
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.text-h1 {
+    font-size: 2rem;
+}
+
+.text-h3 {
+    font-size: 18px;
+}
+
+.vh-100 {
+    width: 100%;
+    height: 100vh;
+}
+
+.frame {
+    padding: 20px 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.frame:hover {
+    box-shadow: 0 20px 40px rgba(53, 115, 183, 0.3);
+}
+
+
+/* Color Variables */
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --primary-blue: #3573b7;
+    --black-blue-gradient: linear-gradient(135deg, #000000 0%, #3573b7 100%);
+    --blue-pink-gradient: linear-gradient(135deg, #3573b7, #fecfef);
+    --LINE: #06c755; /*สีของ LINE*/
+}
+
+/*--------------------------*/
+
+/*-----header-----*/
+header {
+    background: var(--black-blue-gradient);
+}
+
+.header-item {
+    display: flex;
+    margin-top: 10rem;
+}
+
+
+.header-item img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-item img:hover {
+    transform: translateY(-5px);
+    cursor: grab;
+}
+
+.header-text {
+    margin-left: 2rem;
+    margin-top: 4rem;
+}
+
+#text-blue {
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.social-icon {
+    margin-top: 1rem;
+}
+
+.social-icon a {
+    font-size: 1.2rem;
+    color: var(--primary-black);
+}
+
+.social-icon a i {
+    background: var(--primary-blue);
+    padding: 5px 5px;
+    border-radius: 50%;
+    transition: tranform .5s ease;
+}
+
+.social-icon a i:hover {
+    background: var(--blue-pink-gradient);
+    transform: scale(1.1);
+}
+
+/*---------------------*/
+
+
+/*---------------------*/
+.themeLine-header {
+    justify-items: center;
+}
+
+.themeLine-header p a i {
+    color: var(--primary-blue);
+    transition: tranform .5s ease;
+}
+
+.themeLine-header p a i:hover {
+    color: var(--LINE);
+    transform: scale(1.1);
+}
+
+.themeLine-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /*กำหนดขนาด card*/
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.card-item {
+    position: relative;
+    height: 500px;
+    /*กำหนดขนาดรูป*/
+    border-radius: 10px;
+    overflow: hidden;
+    /*ทำให้มองไม่ของที่อยู่ใน div ย่อย*/
+
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(53, 115, 183, 0.5);
+}
+
+.card-item img {
+    width: 100%;
+    /*ตีเต็ม 100% ของ 300px ที่กำหนดไว้ใน .box*/
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    /*พลักให้อยู่ล่างกล่อง*/
+    transition: transform 0.3s ease;
+}
+
+.card-item:hover .overlay {
+    transform: translateY(0);
+    /*popup ขึ้นมา*/
+}
+
+.overlay h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.overlay a {
+    display: inline-block;
+    background-color: #3573b7;
+    color: var(--primary-white);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.overlay a:hover {
+    background: var(--blue-pink-gradient);
+}
+
+/*---------------------*/
+
+/*---------------------*/
+.cha-item {
+    display: flex;
+
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cha-item:hover {
+    box-shadow: 0 20px 40px rgba(53, 115, 183, 0.3);
+}
+
+.cha-text {
+    width: 100%;
+}
+
+.cha-text-box {
+    margin: 12rem 5rem;
+}
+
+.container-slide {
+    max-width: 400px;
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 3 / 4;
+    /* ขนาดรูป*/
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 12px;
+    overflow-x: auto;
+
+    /* ซ่อนแถบเลื่อน */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* ซ่อนแถบเลื่อน */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.slider img:hover {
+    transform: scale(1.05);
+    cursor: grab;
+}
+
+/* ตุ่มเลื่อน */
+.slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    /* ขนาดตุ่มเลื่อน  */
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--primary-white);
+    opacity: 0.7;
+    transition: all ease 250ms;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อคลิก */
+.slider-nav a:active {
+    transform: scale(0.9);
+}
+
+/*---------------------*/
+
+/*---------------------*/
+.gallary-img {
+    column-width: 320px;
+    column-gap: 15px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+
+.gallary-img figure {
+    border-radius: 15px;
+    
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    margin: 0 2px 15px;
+    padding: 15px;
+    padding-bottom: 10px;
+    transition: .4s ease-in-out;
+    display: inline-block;
+    /*column-break-inside: avoid; ไม่ใส่ก็ได้*/
+}
+
+    
+.gallary-img figure img {
+    width: 100%;
+    height: auto;
+    
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.gallary-img:hover figure:not(:hover) {
+    opacity: 0.4;
+}
+
+.gallary-img:hover figure {
+    box-shadow: 0 20px 40px rgba(53, 115, 183, 0.3);
+    cursor: pointer;
+}
+
+figcaption{
+    padding-top: 2rem;
+}
+
+.gallery-item{
+    justify-items: center;
+}
+/*---------------------*/
+
+/*---------------------*/
+.footerBootom{
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    text-align: center;
+}
+.footerBootom a{
+    opacity: 0.7;
+    color: var(--primary-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0px 5px;
+    transition: tranform .5s ease;
+}
+.footerBootom a:hover{
+    /*ทำให้ตัวอักษรไล่สี*/
+    background: var(--blue-pink-gradient);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/*---------------------*/

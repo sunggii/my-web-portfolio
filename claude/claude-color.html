@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="claude-color.css">
+    <title>Dark Website Color Scheme</title>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg" id="animatedBg"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Dark Theme Color Scheme</h1>
+            <p>พื้นหลังสีดำ พร้อมสีหลักขาวและน้ำเงิน</p>
+        </div>
+    </header>
+
+    <!-- Color Palette -->
+    <section class="color-palette">
+        <div class="container">
+            <h2 class="palette-title">สีหลัก</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample black-sample"></div>
+                    <h3>สีดำ</h3>
+                    <p>#000000</p>
+                    <p>สีพื้นหลังหลัก</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample white-sample"></div>
+                    <h3>สีขาว</h3>
+                    <p>#FFFFFF</p>
+                    <p>สีข้อความหลัก</p>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample blue-sample"></div>
+                    <h3>สีน้ำเงิน</h3>
+                    <p>#3573B7</p>
+                    <p>สีเน้น (Accent)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gradient Examples -->
+    <section class="gradient-section">
+        <div class="container">
+            <h2 class="gradient-title">ตัวอย่างการไล่สี</h2>
+            <div class="gradient-examples">
+                <div class="gradient-card gradient-1">
+                    <div class="gradient-overlay">
+                        <h4>Blue Gradient</h4>
+                        <p>น้ำเงินเข้มไปอ่อน</p>
+                    </div>
+                </div>
+                <div class="gradient-card gradient-2">
+                    <div class="gradient-overlay">
+                        <h4>White to Blue</h4>
+                        <p>ขาวไปน้ำเงิน</p>
+                    </div>
+                </div>
+                <div class="gradient-card gradient-3">
+                    <div class="gradient-overlay">
+                        <h4>Black to Blue</h4>
+                        <p>ดำไปน้ำเงิน</p>
+                    </div>
+                </div>
+                <div class="gradient-card gradient-4">
+                    <div class="gradient-overlay">
+                        <h4>Radial Gradient</h4>
+                        <p>ไล่สีแบบวงกลม</p>
+                    </div>
+                </div>
+                <div class="gradient-card gradient-5">
+                    <div class="gradient-overlay">
+                        <h4>Triple Color</h4>
+                        <p>ดำ-น้ำเงิน-ขาว</p>
+                    </div>
+                </div>
+                <div class="gradient-card gradient-6">
+                    <div class="gradient-overlay">
+                        <h4>Conic Gradient</h4>
+                        <p>ไล่สีแบบกรวย</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Features -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Modern Design</h3>
+                    <p>การออกแบบที่ทันสมัยด้วยโทนสีเข้ม</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Gradient Effects</h3>
+                    <p>เอฟเฟกต์ไล่สีที่สวยงามและน่าสนใจ</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive</h3>
+                    <p>รองรับการแสดงผลบนทุกอุปกรณ์</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="code-section">
+        <div class="container">
+            <h2 class="code-title">CSS Code สำหรับสีและไล่สี</h2>
+            <div class="code-container">
+                <pre>
+/* ตัวแปรสี */
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --primary-blue: #3573b7;
+    
+    /* ไล่สีต่างๆ */
+    --blue-gradient: linear-gradient(135deg, #3573b7 0%, #2a5d9a 100%);
+    --white-blue-gradient: linear-gradient(135deg, #ffffff 0%, #3573b7 100%);
+    --black-blue-gradient: linear-gradient(135deg, #000000 0%, #3573b7 100%);
+    --radial-gradient: radial-gradient(circle, #3573b7 0%, #000000 70%);
+}
+
+/* พื้นหลังหลัก */
+body {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+}
+
+/* ตัวอย่างการใช้ไล่สี */
+.gradient-header {
+    background: var(--black-blue-gradient);
+}
+
+.gradient-button {
+    background: var(--blue-gradient);
+    color: var(--primary-white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(53, 115, 183, 0.3);
+}
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // สร้างจุดกระจายเคลื่อนไหว
+        function createFloatingElements() {
+            const container = document.getElementById('animatedBg');
+            const elementCount = 50;
+            
+            for (let i = 0; i < elementCount; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 20 + 's';
+                element.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(element);
+            }
+        }
+
+        // เพิ่มเอฟเฟกต์ hover สำหรับ gradient cards
+        document.querySelectorAll('.gradient-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const overlay = this.querySelector('.gradient-overlay h4');
+                const originalText = overlay.textContent;
+                overlay.textContent = 'คลิกแล้ว!';
+                setTimeout(() => {
+                    overlay.textContent = originalText;
+                }, 1000);
+            });
+        });
+
+        // เริ่มต้นเอฟเฟกต์
+        createFloatingElements();
+
+        // เพิ่มเอฟเฟกต์พิเศษเมื่อเลื่อนหน้า
+        window.addEventListener('scroll', function() {
+            const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            document.documentElement.style.setProperty('--scroll-progress', scrollPercent);
+        });
+    </script>
+</body>
+</html>

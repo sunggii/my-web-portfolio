@@ -1,0 +1,308 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-black: #000000;
+            --primary-white: #ffffff;
+            --primary-blue: #3573b7;
+            --light-blue: #5a8cc9;
+            --dark-blue: #2a5d9a;
+            --blue-gradient: linear-gradient(135deg, #3573b7 0%, #2a5d9a 100%);
+            --white-blue-gradient: linear-gradient(135deg, #ffffff 0%, #3573b7 100%);
+            --black-blue-gradient: linear-gradient(135deg, #000000 0%, #3573b7 100%);
+            --radial-gradient: radial-gradient(circle at center, #3573b7 0%, #000000 70%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: var(--black-blue-gradient);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, rgba(53, 115, 183, 0.3) 0%, transparent 70%);
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #3573b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Color Palette Section */
+        .color-palette {
+            padding: 80px 0;
+            background: var(--primary-black);
+        }
+
+        .palette-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-white);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .color-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(53, 115, 183, 0.3);
+        }
+
+        .color-sample {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+
+        .black-sample { background: var(--primary-black); border: 2px solid var(--primary-white); }
+        .white-sample { background: var(--primary-white); }
+        .blue-sample { background: var(--primary-blue); }
+
+        /* Gradient Examples */
+        .gradient-section {
+            padding: 80px 0;
+            background: var(--primary-black);
+        }
+
+        .gradient-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-white);
+        }
+
+        .gradient-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gradient-card {
+            height: 200px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gradient-card:hover {
+            transform: scale(1.05);
+        }
+
+        .gradient-1 { background: var(--blue-gradient); }
+        .gradient-2 { background: var(--white-blue-gradient); }
+        .gradient-3 { background: var(--black-blue-gradient); }
+        .gradient-4 { background: var(--radial-gradient); }
+        .gradient-5 { 
+            background: linear-gradient(45deg, #000000 0%, #3573b7 50%, #ffffff 100%);
+        }
+        .gradient-6 { 
+            background: conic-gradient(from 0deg, #000000, #3573b7, #ffffff, #3573b7, #000000);
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: white;
+        }
+
+        /* Interactive Features */
+        .feature-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #000000 0%, #001a33 50%, #000000 100%);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(53, 115, 183, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+       
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+
+        .feature-card:hover {
+            background: rgba(53, 115, 183, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(53, 115, 183, 0.2);
+        }
+
+        /*.feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--blue-gradient);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* Code Examples */
+        .code-section {
+            padding: 80px 0;
+            background: var(--primary-black);
+        }
+
+        .code-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-white);
+        }
+
+        .code-container {
+            background: rgba(53, 115, 183, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(53, 115, 183, 0.3);
+            font-family: 'Courier New', monospace;
+            color: #ffffff;
+            overflow-x: auto;
+        }
+
+        .code-container pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .color-grid,
+            .gradient-examples,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
