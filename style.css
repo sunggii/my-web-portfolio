@@ -239,9 +239,7 @@ header {
 .cha-item:hover {
     box-shadow: 0 20px 40px rgba(53, 115, 183, 0.3);
 }
-.cha-text-box hr{
-    margin-left: 38%;
-}
+
 .cha-text {
     width: 100%;
     flex: 1;           /* เพิ่มใหม่ */
@@ -443,6 +441,9 @@ figcaption{
     .container-slide {
         max-width: 300px;
     }
+    .cha-text-box hr{
+        margin-left: 38%;
+    }
 
     /* Gallery */
     .gallary-img {
@@ -543,6 +544,9 @@ figcaption{
         grid-gap: 15px;
     }
     
+    .cha-text-box hr{
+    margin-left: 29%;
+}
     .card-item {
         height: 280px;
     }
@@ -583,6 +587,14 @@ figcaption{
     
     .gallary-img {
         column-count: 1;
+    }
+
+    /*hr*/
+    .cha-text-box hr{
+        margin-left: 20%;
+    }
+    .header-text hr{
+        margin-left: 20%;
     }
 }
 
