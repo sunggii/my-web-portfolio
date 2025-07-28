@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -42,7 +41,7 @@ hr {
 
 .vh-100 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /*ใส่ min จะได้ยืดหยุ่น*/
 }
 
 .frame {
@@ -78,6 +77,8 @@ header {
 
 .header-item {
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10rem;
 }
 
@@ -117,7 +118,7 @@ header {
     background: var(--primary-blue);
     padding: 5px 5px;
     border-radius: 50%;
-    transition: tranform .5s ease;
+    transition: transform .5s ease;
 }
 
 .social-icon a i:hover {
@@ -131,6 +132,9 @@ header {
 /*---------------------*/
 .themeLine-header {
     justify-items: center;
+    /* เพิ่มเข้ามาใหม่ */
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .themeLine-header p a i {
@@ -153,7 +157,7 @@ header {
 
 .card-item {
     position: relative;
-    height: 500px;
+    height: 450px;
     /*กำหนดขนาดรูป*/
     border-radius: 10px;
     overflow: hidden;
@@ -222,6 +226,8 @@ header {
 /*---------------------*/
 .cha-item {
     display: flex;
+    align-items: center;  /* เพิ่มใหม่ */
+    gap: 2rem;           /* เพิ่มใหม่ */
 
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.05);
@@ -233,18 +239,19 @@ header {
 .cha-item:hover {
     box-shadow: 0 20px 40px rgba(53, 115, 183, 0.3);
 }
-
+.cha-text-box hr{
+    margin-left: 38%;
+}
 .cha-text {
     width: 100%;
-}
-
-.cha-text-box {
-    margin: 12rem 5rem;
+    flex: 1;           /* เพิ่มใหม่ */
+    padding: 2rem;
 }
 
 .container-slide {
     max-width: 400px;
     width: 100%;
+    flex: 1;  
 }
 
 .slider {
@@ -395,3 +402,187 @@ figcaption{
     -webkit-text-fill-color: transparent;
 }
 /*---------------------*/
+
+ @media screen and (max-width: 768px){
+    .text-h1 {
+        font-size: 1.5rem;
+    }
+    
+    .text-h3 {
+        font-size: 16px;
+    }
+    
+    /* Header */
+    .header-item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .header-text hr{
+        margin-left: 38%;
+    }
+
+    /*themeLine-item*/
+    .themeLine-card {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 20px;
+        padding: 10px;
+    }
+    
+    .card-item {
+        height: 350px;
+    }
+
+    /* Character Design */
+    .cha-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .container-slide {
+        max-width: 300px;
+    }
+
+    /* Gallery */
+    .gallary-img {
+        column-width: 280px;
+        width: 95%;
+    }
+}
+
+/* Mobile (480px and below) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .text-h1 {
+        font-size: 1.3rem;
+    }
+    
+    .text-h3 {
+        font-size: 14px;
+    }
+    
+    .vh-100 {
+        min-height: auto;
+        padding: 20px 0;
+    }
+    
+    /* Header */
+    .header-item {
+        margin-top: 0.5rem;
+        padding: 15px;
+    }
+    
+    .header-item img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .header-text p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .social-icon a i {
+        padding: 8px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    /* Theme Line */
+    .themeLine-header p {
+        font-size: 14px;
+    }
+    
+    .themeLine-card {
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+        padding: 5px;
+    }
+    
+    .card-item {
+        height: 300px;
+    }
+    
+    /* Character Design */
+    .cha-text {
+        padding: 0.5rem;
+    }
+    
+    .container-slide {
+        max-width: 250px;
+    }
+    
+    /* Gallery */
+    .gallary-img {
+        column-width: 100%;
+        column-count: 1;
+    }
+    
+    .gallary-img figure {
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+    
+    /* Footer */
+    .footerBootom {
+        padding: 15px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Large Mobile (576px and below) */
+@media screen and (max-width: 576px) {
+    /* Theme Line Cards - 2 columns on larger mobile */
+    .themeLine-card {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+    }
+    
+    .card-item {
+        height: 280px;
+    }
+    
+    /* Gallery - 2 columns */
+    .gallary-img {
+        column-count: 2;
+        column-width: auto;
+    }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media screen and (max-width: 360px) {
+    .container {
+        padding: 8px;
+    }
+    
+    .text-h1 {
+        font-size: 1.1rem;
+    }
+    
+    .header-item img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .themeLine-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-item {
+        height: 250px;
+    }
+    
+    .container-slide {
+        max-width: 200px;
+    }
+    
+    .gallary-img {
+        column-count: 1;
+    }
+}
+
