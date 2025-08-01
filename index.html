@@ -11,13 +11,16 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-------------->
 
+    <!---animation--->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-------------->
     <link rel="stylesheet" href="style.css">
     <title>Potfolio.me</title>
     <link rel="icon" type="image/x-icon" href="/img/title.png">
 </head>
 
 <body>
-    <header class="vh-100"  id="header">
+    <header class="vh-100"  id="header" data-aos="fade-up">
         <div class="container">
             <div class="header-item frame">
                 <div class="header-img">
@@ -59,7 +62,7 @@
         </div>
     </header>
 
-    <section class="vh-100">
+    <section class="vh-100" data-aos="fade-up">
         <div class="themeLine-item">
             <div class="container">
                 <div class="themeLine-header">
@@ -117,7 +120,7 @@
             </div>
     </section>
 
-    <section class="vh-100">
+    <section class="vh-100" data-aos="fade-right">
         <div class="container">
             <div class="cha-item frame">
                 <div class="cha-text">
@@ -149,7 +152,7 @@
         </div>
     </section>
 
-    <section>
+    <section data-aos="fade-up">
         <div class="container">
             <div class="gallery-item">
                 <div class="gallery-text">
@@ -194,6 +197,12 @@
     </section>
 
     <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
         <div class="footerBootom">
             <p>Copyright &copy;2025 Designed by
                 <!--<span class="designer">Mister S</span>-->
@@ -202,6 +211,12 @@
         </div>
     </footer>
 
+<!---------------------->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<!---------------------->
 
 </body>
 

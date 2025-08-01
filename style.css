@@ -399,6 +399,7 @@ figcaption{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 /*---------------------*/
 
  @media screen and (max-width: 768px){
@@ -597,4 +598,6 @@ figcaption{
         margin-left: 20%;
     }
 }
+
+
 
